@@ -7,7 +7,7 @@ A shared memory approach would probably yield a better speedup, however, the goa
 
 ## Sieve of Eratosthenes
 
-The sequential code implements the [Sieve of Eratoshenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).![Sieve In Action](https://en.wikipedia.org/wiki/File:Sieve_of_Eratosthenes_animation.gif)
+The sequential code implements the [Sieve of Eratoshenes](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).![Sieve In Action](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)
 
 To optimize the sequential code before writing a parallel version, for each prime factor *p* the code steps throught the sieve with steps of size *p* rather than checking every element for divisibility by *p*.
 
