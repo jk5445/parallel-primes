@@ -3,7 +3,7 @@
 ## MPI
 
 This project uses MPI. MPI is a library for parallel processes. The processes do not share memory and can only communicate through MPI communication calls.
-A shared memory approach would probably yield a better speedup, however, the goal of this project is increase familiarity with MPI and the distributed memory approach.
+While more complex algorithms and/or a shared memory approach would yield a better speedup, the goal of this project is to increase familiarity with MPI and the distributed memory approach to parallelization.
 
 ## Sieve of Eratosthenes
 
