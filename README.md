@@ -1,9 +1,8 @@
 # Parallel Primes
 
-## MPI
+## Overview
 
-This project uses MPI. MPI is a library for parallel processes. The processes do not share memory and can only communicate through MPI communication calls.
-While more complex algorithms and/or a shared memory approach would yield a better speedup, the goal of this project is to increase familiarity with MPI and the distributed memory approach to parallelization.
+This project is an excercise in parallel programming. The goal is to write an algorithm that makes use of multiple processors with distributed memory to generate prime numbers.
 
 ## Sieve of Eratosthenes
 
@@ -17,6 +16,11 @@ The parallel version splits the crossing out of elements in the sieve among the 
 1. generates all primes less than the square root of n sequentially
 2. marks all multiples of the generated prime numbers in the process's block of the sieve
 3. sends the marked block to the master process
+
+## MPI
+
+This project uses MPI. MPI is a library for parallel processes. The processes do not share memory and can only communicate through MPI communication calls.
+While more complex algorithms and/or a shared memory approach would yield a better speedup, the purpose here is to increase familiarity with MPI and the distributed memory approach to parallelization.
 
 ## Performance
 
