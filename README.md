@@ -11,7 +11,7 @@ The sequential code implements the [Sieve of Eratoshenes](https://en.wikipedia.o
 
 ![Sieve In Action](https://upload.wikimedia.org/wikipedia/commons/b/b9/Sieve_of_Eratosthenes_animation.gif)
 
-To optimize the sequential code before writing a parallel version, for each prime factor *p* the code steps throught the sieve with steps of size *p* rather than checking every element for divisibility by *p*.
+Note the small deviation and optimization from the traditional Sieve of Eratosthenes: for each prime factor *p* the code steps throught the sieve with steps of size *p* rather than checking every element for divisibility by *p*.
 
 The parallel version splits the crossing out of elements in the sieve among the processors. To limit costly communication between processors, each process:
 1. generates all primes less than the square root of n sequentially
@@ -21,7 +21,7 @@ The parallel version splits the crossing out of elements in the sieve among the 
 ## Performance
 
 The performance of the parallelized version is significantly worse for problem sizes smaller than 10 million.
-This is mostly due to MPI overhead. MPI initialization alone takes a few hundred ms.
+This is mostly due to MPI overhead. MPI initialization alone takes a few hundred milliseconds.
 
 As the problem size increases we do see good speed up, but the speedup is limited by the need to write the primes sequentially.
 
@@ -29,9 +29,9 @@ As the problem size increases we do see good speed up, but the speedup is limite
 
 To run the parallelized code you will need MPI [openmpi](https://www.open-mpi.org)
 
-Use *mpicc -Wall -std=c99 -o genprimes genprimes.c* to compile the parralelized code and *mpiexec -n [x] ./genprimes [m]* to generate all primes up to *m* with *x* processes in parallel.
+*mpicc -Wall -std=c99 -o genprimes genprimes.c* to compile the parralelized code and *mpiexec -n [x] ./genprimes [m]* to generate all primes up to *m* with *x* processes in parallel.
 
-Use *gcc -Wall -std=c99 -o seqgenprimes seqgenprimes.c* to compile the sequential code and *./seqgenprimes [m]* to generate all primes up to *m* sequentially.
+*gcc -Wall -std=c99 -o seqgenprimes seqgenprimes.c* to compile the sequential code and *./seqgenprimes [m]* to generate all primes up to *m* sequentially.
 
 The results will be written to results/*m*.txt.
 
